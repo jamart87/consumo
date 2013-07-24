@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script>
+      $( document ).on( "pageshow", function(){
+        //$( "#configurar" ).hide().delay( 1500 ).show( "fast" );       
+      });
+
+      function onLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+      
+      function onDeviceReady() {
+          // Now safe to use the Cordova API          
+      }     
+    </script>
+   </head>
+   <body>
+      <div id="Consumo de Datos" data-url="Consumo de Datos" data-role="page">
+        <div data-role="header" data-position="fixed">
+          <div data-role="navbar">            
+              <ul id="mainmenu">
+                <li>
+                  <a class="menuitemMenu" href="#" data-icon="grid" data-role="button" data-iconpos="notext" onclick="slideDownUp('submenuMenu');"></a>
+                </li>
+                <li><a class="menuitemHome" href="#" data-icon="home" data-role="button" data-iconpos="notext"></a></li>
+                <li><a class="menuitemStore" href="#" data-icon="star" data-role="button" data-iconpos="notext"></a></li>
+                <li><a class="menuitemConfig" href="#" data-icon="gear" data-role="button" data-iconpos="notext"></a></li>
+              </ul>
+              <script type="text/javascript">
+                $(".menuitemMenu").next('ul').css( "display", "none" );
+              </script>
+          </div><!-- /navbar -->
+        </div><!-- /header -->
+         <div data-role="content">
+            <div id="tituloConfig" >
+              DATOS DE USUARIO
+            </div>
+            <div id="central-content">
+	            <div id="userFormData">
+	            	<input type="text" name="Nombre" id="user_name_edit" placeholder="Nombre" />
+	            	<input type="text" name="Email" id="user_email_edit" placeholder="Email" />
+	            </div>
+            
+            
+	            <script type="text/javascript">	
+	               //Precargando los datos si fue traido a esta pagina seleccionando un numero:
+	               consultarUsuarioBD();					
+	            </script>
+	            
+	            <span id="btnGuardarUsuario" class="appBtn" ></span>
+	            <span id="btnCancelarUsuario" class="appBtn" OnClick='$.mobile.changePage("listado.html", { transition: "slide" });' ></span>	               
+	            
+            </div>
+            <!-- Submenu -->
+            <div class="content_submenu" style="display: none;">
+              <ul id="submenuMenu" class="submenu clearfix">
+                <li><a class="submenuitem menuitemHistorial" href="#">Mira tu historial</a></li>
+                <li><a class="submenuitem menuitemContacto" href="#">Contacto</a></li>
+                <li><a class="submenuitem menuitemTerminos" href="#">Terminos y condiciones</a></li>
+               <!-- <li><a class="submenuitem menuitemSalir" href="#">Salir</a></li>-->
+              </ul>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

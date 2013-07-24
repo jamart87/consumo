@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<script>
+			// Wait for Cordova to load
+		    document.addEventListener("deviceready", onDeviceReady, false);
+
+		    $( document ).on( "pageshow", function(){
+				
+			});
+
+			function onDeviceReady() {
+			}
+
+			// Aqui se carga la funcion cuando se carga completament el arbol DOm de nuestra pagina index.html
+			$(document).ready(function(){
+				
+			});//fin de document ready
+			
+		</script>
+
+	</head>
+	<body>
+		<div id="detallePaquete" data-url="Detalle Paquete" data-role="page">
+			<div data-role="header" data-position="fixed">
+				<div data-role="navbar">				    
+				    <ul id="mainmenu">
+					    <li>
+				    	<a class="menuitemMenu" href="#" data-icon="grid" data-role="button" data-iconpos="notext" onclick="slideDownUp('submenuMenu');"></a>
+					    </li>
+					    <li><a class="menuitemHome" href="#" data-icon="home" data-role="button" data-iconpos="notext"></a></li>
+					    <li><a class="menuitemStore" href="#" data-icon="star" data-role="button" data-iconpos="notext"></a></li>
+					    <li><a class="menuitemConfig" href="#" data-icon="gear" data-role="button" data-iconpos="notext"></a></li>
+				    </ul>
+				    <script type="text/javascript">
+				    	$(".menuitemMenu").next('ul').css( "display", "none" );
+				    </script>
+				</div><!-- /navbar -->
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<span id="programarAlarmaTitle" class="headingTitle">
+                    <img src="css/images/app/paquetedeDatosActual.png" width="340" />
+                </span>
+
+				<div data-role="fieldcontain">
+					<div class="tituloDetalle">Detalle del paquete de datos:</div>
+					<div class="subtituloDetalle" style="float:left; margin-right: 0px;">
+						Al día &nbsp;
+					</div>
+					<div id="dateAndTimeDetailPack" class="subtituloDetalle">
+					</div>
+				</div>
+				<div data-role="fieldcontain">
+					<div class="tituloDetalle" style="float:left; margin-right: 0px;">Número Claro:&nbsp;&nbsp;</div>
+					<div id="phoneNumDetailPack" class="subtituloDetalle"></div>
+				</div>
+				<br/>
+				<div class="tituloDetalle">Paquete contratado:</div>
+				<div id="packNameDetailPack" class="subtituloDetalle"></div>
+
+				<script type="text/javascript">
+					//conversion de fecha acutal
+					var ahora = new Date( );
+					var fech = mostrarFechaCompuestaDias(ahora);
+					var hora = mostrarHoraCompuesta(ahora);
+					$("#dateAndTimeDetailPack").empty();
+					$("#dateAndTimeDetailPack").append(fech+" a las "+hora);
+					$("#phoneNumDetailPack").empty();
+					$("#phoneNumDetailPack").append(numtelefonico);
+					$("#packNameDetailPack").empty();
+					$("#packNameDetailPack").append(nombrepaq);
+
+					//consultando historial con ws
+					var resultado = "";
+					window.obtenerhistorial(numtelefonico,"2012-05-27T15:00:00","2013-06-15T15:00:00", function(echoValue) {
+			          alert(echoValue);
+			          resultado = echoValue;
+			        });
+	    			//leerxml(resultado);
+
+				</script>
+
+				<br/>
+				<ul data-role="listview" data-inset="true">
+					<li class="listdividerNums" data-role="list-divider">
+						<span id="programarAlarmaTitle" class="headingTitle">
+                    		<img src="css/images/app/ultimosPaquetesContratados.png" width="325" />
+                		</span>
+                	</li>
+					<li class="">
+						<h3>Nombre del paquete</h3>
+						<p style="font-size: 17px;">Inicio de vigencia:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fin de vigencia</p>
+					</li>
+					<li class="">
+						<h3>Día del lápiz, promo 3000MB.</h3>
+						<p style="font-size: 17px;">13/05/2013 - 01/06/2013</p>
+					</li>					
+				</ul>
+				<!-- Submenu -->
+				<div class="content_submenu" style="display: none;">
+	              <ul id="submenuMenu" class="submenu clearfix">
+	                <li><a class="submenuitem menuitemHistorial" href="#">Mira tu historial</a></li>
+	                <li><a class="submenuitem menuitemContacto" href="#">Contacto</a></li>
+	                <li><a class="submenuitem menuitemTerminos" href="#">Terminos y condiciones</a></li>
+	               <!-- <li><a class="submenuitem menuitemSalir" href="#">Salir</a></li> -->
+	              </ul>
+	            </div>
+			</div>
+		</div>
+	</body>
+</html>

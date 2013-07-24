@@ -1,0 +1,409 @@
+/**
+ * Estilos para la App de consumo de datos	
+ * 
+ */
+
+html, body {
+	background: #F6F6F6;
+	font-family: "Century Gothic";
+	font-size: 115%;
+}
+
+.clearfix:before, .clearfix:after               { content: " "; display: table; }
+.clearfix:after                                 { clear: both; }
+.clearfix                                       { *zoom: 1; }  
+
+div.content_page { position: relative !important; }
+div.content_submenu { width: 100%; height: 100%; z-index:1000 ; background: #000; position: fixed; top: 48px; left: 0px; }
+div.content_submenu ul { margin: 0px; padding: 0px; list-style: none; }
+div.content_submenu ul li { width: 100%; border-bottom: 1px solid #FFF; line-height: 50px !important; }
+div.content_submenu ul li a { width: 100%; padding: 4px 0px 4px 60px !important; line-height: 50px !important; color: #FFF !important; display: block; text-decoration: none; cursor: pointer; }
+
+div.content_submenu ul li a.menuitemHistorial { background: url(images/app/reloj.png) no-repeat 6px center;}
+div.content_submenu ul li a.menuitemContacto { background: url(images/app/sobre.png) no-repeat 6px center;}
+div.content_submenu ul li a.menuitemTerminos { background: url(images/app/check.png) no-repeat 6px center;}
+div.content_submenu ul li a.menuitemSalir { background: url(images/app/flechaAtras.png) no-repeat 6px center;}
+
+
+ul#mainmenu, ul#mainmenu > li, ul#mainmenu > li > a, ul#mainmenu > li > a > span  {
+	background: none;
+	border: 0;
+}
+.ui-icon-shadow {
+	background: none;
+	box-shadow:none;
+}
+ul#mainmenu a {
+	padding: 4px 0;
+}
+ul#mainmenu .menuitemMenu {
+	background: #DF0100 url(images/app/lineas.png) no-repeat center center;	 
+}
+
+ul#mainmenu .menuitemHome {
+	background: #DF0100 url(images/app/casita.png) no-repeat center center;	 
+}
+
+ul#mainmenu .menuitemStore {
+	background: #DF0100 url(images/app/carretilla.png) no-repeat center center;	 
+}
+
+ul#mainmenu .menuitemConfig {
+	background: #DF0100 url(images/app/engranaje.png) no-repeat center center;	 
+}
+
+div#user_name, div#tituloConfig  {
+	font-family: Arial;
+	font-size: 135%;
+	padding: 4px;
+	color: #fff;
+	background: #000;
+}
+
+.ui-content {
+	padding: 0;
+}
+
+.greyText {
+	color: #8E8E8E;
+}
+.stripedRow {
+	padding:1%;
+	overflow: hidden;
+}
+
+
+.stripedRow.odd{
+	background: #EFEFEF;
+}
+.txtdato{
+	color: #8E8E8E;
+	width: 180px;    
+	display: inline-block;  
+	text-align: left;
+	
+}
+
+.datoimg{
+	width: 35%;
+	float:right;	
+	background:#D52B1E;  
+	display: inline-block;  
+	text-align: center;
+	padding: 0.1%;
+	text-shadow:0 0 0 !important;
+	color:#fff;
+}
+
+#central-content {
+	padding: 10px;
+}
+
+div.ui-tolito-progressbar-bg{
+	background-image: none;
+	background-color: #df0000;
+	text-shadow: 0 1px 1px rgb(180, 63, 63);
+}
+
+div#progressbar{
+	height: 25px;
+}
+
+div#central-content a{
+	color: rgb(0, 184, 255);
+}
+
+div.ui-tolito-progressbar-label{
+	color: rgb(0, 184, 255);
+}
+
+#chart_div{
+	width: 150px;
+ 	height: 150px;	
+}
+
+#mensajeMBDisp{
+	font-size: 15px; 		
+	text-align: center;
+}
+
+
+/** PARA FORMULARIOS  **/
+	input[type="text"]{
+		border:0;
+		background: #FFF;
+		height: 30px; 
+	}
+	
+	.ui-input-text {
+		border: 0;
+		background: none;
+	}
+	
+	.ui-shadow-inset.ui-corner-all.ui-btn-shadow, .ui-corner-all {
+		border: 0;
+		background: none;
+		background: #ffffff;
+	}
+	
+	#btnGuardarUsuario {
+		display: inline-block;
+		width: 111px;
+		height: 50px;
+		background: url(images/app/btn_Guardar.png) no-repeat center center;
+		float: right;
+		margin-left: 20px;
+	}
+	#btnCancelarUsuario {
+		display: inline-block;
+		width: 111px;
+		height: 50px;
+		background: url(images/app/btn_cancelar.png) no-repeat center center;
+		float: right;
+		margin-left: 20px;
+	}
+	
+/** AREA DE CONFIGURACION **/
+	.configMenuBox {
+		clear: both;
+		overflow: hidden;
+		display: block;
+		height: 70px;
+		background: #424242;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 15px;
+	}
+	.btnConfigArea{
+		float: left;
+		padding: 8px 0 0 0;
+		color: #fff;
+		width: 33%;
+		text-align: center;
+		cursor: pointer;
+	}
+
+	#btnEditarUsuario {
+		border-left:2px  #7d7b7c solid;
+		border-right:2px  #7d7b7c solid;
+	}	
+
+	.listdividerNums {
+		padding: 0 0;
+		border: 0px !important;
+	}
+
+	.headingTitle {
+        display:block;
+        background: #000;
+        height: 60px;
+        width: 100%;
+    }
+    
+    .headingTitle img{
+        margin: 0 auto;
+    }
+
+    .ui-listview p {
+		color: #b2b2b2;
+	}
+
+/** AREA DE CONFIGURACION DE NUMEROS **/
+	div#tituloConfig {
+		font-size: 17px;
+		height: 35px;
+		text-align: center;
+		padding: 15px 0 0 0;	
+	}
+	
+	#btnValidar {
+		display: inline-block;
+		width: 192px;
+		height: 50px;
+		background: url(images/app/btn_solicitarCodigo.png) no-repeat center center;
+		float: right;
+		margin-right: 15px;
+		padding: 11px 0;
+	}
+
+    #btnAgregarNum {
+    display: inline-block;
+    width: 192px;
+    height: 50px;
+    background: url(images/app/btn_AgregarNumero.png) no-repeat center center;
+    float: right;
+    margin-right: 15px;
+    padding: 11px 0;
+    }
+
+	#btnConfirmar {
+		display: inline-block;
+		width: 127px;
+		height: 50px;
+		background: url(images/app/btn_Confirmar.png) no-repeat center center;
+		float: right;
+		margin-right: 15px;
+		padding: 11px 0;
+	}
+
+	#formPhone div.ui-input-text {
+	  width: 93%;
+	}
+
+	/** AREA DE TERMINOS Y CONDICIONES **/
+	.tituloTerminos, .subtituloTerminos, #terminos_condiciones{
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+	
+	.subtituloTerminos, #terminos_condiciones{
+		color: #8e8e8e;
+		font-size: 15px;
+	}
+
+/** AREA DE CONTACTO **/
+	#formContact div{
+		margin-left: 15px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		width: 85%;
+	}
+
+	#formContact textarea{
+		width: 290px;
+		height: 150px
+	}
+
+	#enviarCorreo {
+		display: inline-block;
+		width: 111px;
+		height: 50px;
+		background: url(images/app/btn_enviar.png) no-repeat center center;
+		float: right;
+		margin-right: 15px;
+		padding: 3px 0;
+	}
+
+	#formContactLinks div{
+		text-align: left;
+		margin-left: 15px;
+	}
+
+/** AREA DE DETALLE DEL PAQUETE **/
+	.tituloDetalle, .subtituloDetalle{
+		margin-left: 25px;
+		margin-right: 25px;
+		font-size: 18px;
+	}
+	
+	.subtituloDetalle{
+		color: #8e8e8e;		
+	}
+
+/** AREA DE CONFIGURACION DE ALARMAS **/
+	.formComboNum div.ui-select{
+		width: 186px;
+		margin-left: 25%;
+	}
+
+	.formComboNum label{
+		font-size: 17px;
+		margin-left: 15px;
+	}
+	
+	.formComboNum div.ui-slider{
+		margin-left: 10px;
+	}
+	
+	#btnGuardarAlarma {
+		display: inline-block;
+		width: 111px;
+		height: 50px;
+		background: url(images/app/btn_Guardar.png) no-repeat center center;
+		/*float: right;*/
+		margin-right: 15px;
+		padding: 3px 0;
+	}
+
+	.formComboNum div.botonGuardarAlarm{
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: -10px;
+	}
+	
+	div.advertencia{
+		text-align: center;
+	}
+
+	label.ui-select, label.ui-slider{
+		width: 60% !important;
+	}
+
+	.listado_alarmas_delete .ui-li-count, .number_element_delete .ui-li-count{
+		top: 36%;
+	}
+
+	span.eliminaralarma img, span.eliminarnumero img{
+		float:left;
+	}
+
+	span.eliminaralarma div, span.eliminarnumero div{
+		float:left; 
+		padding-top: 10px;
+	}
+
+	ul#listado_nums_config li a span[data-icon="star"] {
+		background-image:url(images/app/star.png);
+		background-position: 49% 50%;
+		background-repeat: no-repeat;
+	}
+
+	div.ui-slider-bg {
+		background-image: none;
+		background-color: #df0000;
+	}
+
+/** AREA DE MENU DESPLEGABLE **/
+	div.ui-header.ui-bar-a.ui-header-fixed{
+		background: #000000;
+	}
+
+	a.submenuitem{
+	  padding: 0 0 !important;
+	  /*width: 320px !important;*/	
+	  margin: 0px 0px 0 0 !important;
+	}
+
+	a.submenuitem span.ui-btn-inner span.ui-btn-text{
+		font-size: 17px;
+	}
+
+	a.submenuitem span.ui-btn-inner{
+		padding-left: 90px !important;
+		text-align: left !important;
+		height: 34px !important;
+		border-bottom: solid 1px !important;
+	}
+	
+	a.submenuitem.menuitemHistorial span.ui-btn-inner{
+		background: #000000 url(images/app/reloj.png) no-repeat 25px center;		
+	}
+
+	a.submenuitem.menuitemContacto span.ui-btn-inner{
+		background: #000000 url(images/app/sobre.png) no-repeat 25px center;		
+	}
+
+	a.submenuitem.menuitemTerminos span.ui-btn-inner{
+		background: #000000 url(images/app/check.png) no-repeat 25px center;
+	}
+
+	a.submenuitem.menuitemSalir span.ui-btn-inner{
+		background: #000000 url(images/app/flechaAtras.png) no-repeat 25px center;		
+	}
+
+/** AREA DE GRAFICO DE GAUGE **/
+	#content_gauge { width: 210px; height: 200px; margin: 0px auto; position: relative; }
+	#gauge_datos { width: 210px; height: 200px; background: url('images/app/gauge/bg_tacometro.png'); position: relative; }
+	#gauge_pointer { width: 23px; height: 200px; margin: 0px 87px; transform: rotate(-57deg); }
+	#porcentaje_gauge { width: 60px; height: 60px; position: absolute; bottom: 13px; right: 0px; font-size: 16px; font-weight: bold; color: #FFF; text-align: center; line-height: 60px; }

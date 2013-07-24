@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script>
+			// Wait for Cordova to load
+		    document.addEventListener("deviceready", onDeviceReady, false);
+
+		    $( document ).on( "pageshow", function(){
+				//$("#ConsumodeDatos").hide().delay( 1500 ).show( "fast" );
+				
+			});
+
+			function onDeviceReady() {
+			    
+			}
+
+			// Aqui se carga la funcion cuando se carga completament el arbol DOm de nuestra pagina index.html
+			$(document).ready(function(){
+				
+			});//fin de document ready
+			
+		</script>
+	</head>
+	<body>
+		<div id="ConfigurarAlarma" data-url="Configurar_Alarma" data-role="page">
+			<div data-role="header" data-position="fixed">
+				<div data-role="navbar">				    
+				    <ul id="mainmenu">
+					    <li>
+					    <a class="menuitemMenu" href="#" data-icon="grid" data-role="button" data-iconpos="notext" onclick="slideDownUp('submenuMenu');"></a>
+					    </li>
+					    <li><a class="menuitemHome" href="#" data-icon="home" data-role="button" data-iconpos="notext"></a></li>
+					    <li><a class="menuitemStore" href="#" data-icon="star" data-role="button" data-iconpos="notext"></a></li>
+					    <li><a class="menuitemConfig" href="#" data-icon="gear" data-role="button" data-iconpos="notext"></a></li>
+				    </ul>
+				    <script type="text/javascript">
+				    	$(".menuitemMenu").next('ul').css( "display", "none" );
+				    </script>
+				</div><!-- /navbar -->
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<script type="text/javascript">
+                    document.addEventListener("deviceready", onDeviceReady, false);
+                    
+                    function onDeviceReady() {
+                        window.obteneralarmasdisparadas(function(echoValue) {
+                                                        quitarAlarmasDisparadas(echoValue);
+                                                        jQuery("#alarm").html(consultarTelefonosAlarmasBD());
+                                                        });
+                        // Now safe to use the Cordova API
+                    }
+                    
+                    </script>
+				<span id="programarAlarmaTitle" class="headingTitle">
+                    <img src="css/images/app/programarNuevaAlarma.png" width="350" />
+                </span>
+				<div class="advertencia" >El uso de alarmas puede consumir datos.</div>
+				<div data-role="fieldcontain" class="formComboNum">
+					<div>
+						<label for="cmbNumeroTel">Número telefónico</label>
+					</div>
+					<select name="cmbNumeroTel" id="cmbNumeroTel" data-native-menu="false">
+						
+					</select>
+					<div id="alarm">
+					<script type="text/javascript">
+						consultarTelefonosAlarmasBD();
+					</script>
+				    </div>
+					<br/>
+					<label for="txtporcentaje">% que dispara la alarma</label>
+					<input type="range" name="txtporcentaje" id="txtporcentaje" value="1" min="0" max="100" data-highlight="true"/>
+					<div class="botonGuardarAlarm"><span id="btnGuardarAlarma" class="appBtn" ></span></div>				
+					
+				</div>				
+				
+				<ul id="listado_alarmas_config" data-role="listview" data-inset="true">
+					<li class="listdividerNums" data-role="list-divider">
+						<span id="programarAlarmaTitle" class="headingTitle">
+                    		<img src="css/images/app/alarmas.png" width="350" />
+                		</span>
+                	</li>
+				</ul>
+				<!-- Submenu -->
+				<div class="content_submenu" style="display: none;">
+	              <ul id="submenuMenu" class="submenu clearfix">
+	                <li><a class="submenuitem menuitemHistorial" href="#">Mira tu historial</a></li>
+	                <li><a class="submenuitem menuitemContacto" href="#">Contacto</a></li>
+	                <li><a class="submenuitem menuitemTerminos" href="#">Terminos y condiciones</a></li>
+	                <!--<li><a class="submenuitem menuitemSalir" href="#">Salir</a></li>-->
+	              </ul>
+	            </div>
+			</div>
+		</div>
+	</body>
+</html>

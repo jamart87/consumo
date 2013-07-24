@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+
+		<script>
+			// Wait for Cordova to load
+		    document.addEventListener("deviceready", onDeviceReady, false);
+
+		    $( document ).on( "pageshow", function(){
+				
+			});
+
+			function onDeviceReady() {
+			    // Now safe to use the Cordova API
+			 	    
+			}
+
+			// Aqui se carga la funcion cuando se carga completament el arbol DOm de nuestra pagina index.html
+			$(document).ready(function(){
+				
+			});//fin de document ready
+			
+		</script>
+
+	</head>
+	<body>
+		<div id="Consumo de Datos" data-url="Consumo de Datos" data-role="page">
+			<div data-role="header" data-position="fixed">
+				<div data-role="navbar">				    
+				    <ul id="mainmenu">
+					    <li>
+				    	<a class="menuitemMenu" href="#" data-icon="grid" data-role="button" data-iconpos="notext" onclick="slideDownUp('submenuMenu');"></a>
+	                 		
+					    </li>
+					    <li><a class="menuitemHome" href="#" data-icon="home" data-role="button" data-iconpos="notext"></a></li>
+					    <li><a class="menuitemStore" href="#" data-icon="star" data-role="button" data-iconpos="notext"></a></li>
+					    <li><a class="menuitemConfig" href="#" data-icon="gear" data-role="button" data-iconpos="notext"></a></li>
+				    </ul>
+				    <script type="text/javascript">
+				    	$(".menuitemMenu").next('ul').css( "display", "none" );
+				    </script>
+				</div><!-- /navbar -->
+			</div><!-- /header -->
+
+			<!-- importando plugin para envio de correos -->
+			<script src="js/EmailComposer.js"></script>
+
+			<div data-role="content">
+				<div id="tituloConfig" style="">
+					CONTACTANOS
+				</div>
+								
+				<div data-role="fieldcontain" id="formContact">
+					<div>Escríbenos un mensaje</div>
+					
+					<input type="text" name="Nombre" id="txtNombreMensaje" placeholder="Nombre"/>
+					
+					<input type="text" name="Asunto" id="txtAsunto" placeholder="Asunto"/>
+					<div>
+						<textarea name="Mensaje" id="txtAreaMensaje" placeholder="Mensaje"></textarea>
+					</div>					
+					<span id="enviarCorreo" class="appBtn" ></span>
+					<br>
+					<br>
+					
+				</div>
+				<div data-role="fieldcontain" id="formContactLinks">
+					<div>
+						<img  id="linkf" src="css/images/app/facebook.png" style="width: 53px; height: 52px;" alt="">
+						&nbsp;Escríbenos en facebook
+					</div>
+					<br>
+					
+					<div>
+						<img id="linktw" src="css/images/app/twitter.png" style="width: 48px; height: 38px;" alt="">
+						
+						&nbsp;Escríbenos en twitter
+					</div>
+				</div>
+				<!-- Submenu -->
+				<div class="content_submenu" style="display: none;">
+	              <ul id="submenuMenu" class="submenu clearfix">
+	                <li><a class="submenuitem menuitemHistorial" href="#">Mira tu historial</a></li>
+	                <li><a class="submenuitem menuitemContacto" href="#">Contacto</a></li>
+	                <li><a class="submenuitem menuitemTerminos" href="#">Terminos y condiciones</a></li>
+	                <!--<li><a class="submenuitem menuitemSalir" href="#">Salir</a></li>-->
+	              </ul>
+	            </div>
+			</div>
+		</div>
+	</body>
+</html>
